@@ -1,9 +1,20 @@
 class Solution:
-    def partitionDisjoint(self, nums: List[int]) -> int:    # test case: nums = [5, 0, 3, 8, 6]
-        right = list(accumulate(nums, max))                 # prints right -> [5, 5, 5, 8, 8]
-        left = list(accumulate(nums[::-1], min))[::-1]      # prints left -> [0, 0, 3, 6, 6]
-        for i in range(1, len(nums)):                    
-            if right[i-1] <= left[i]:                       # i=1 -> right 5 !<= 0 left
-                print(i)                                    # i=2 -> right 5 !<= 3 left
-                return i                                    # i=3 -> right 5  <= 6 left  | returns i=3
-              
+    def partitionDisjoint(self, nums):
+        comparison = nums[0]
+		# within numsMax we will keep track of the largest number we found so far
+        numsMax = comparisonItem
+		# result index
+        partitionIdx = 0
+        for i in range(1, len(nums)):
+			# when we find lower item in an array we update partitionIdx to reflect it
+			# and also set out comparison to the highest item we found prior to this item
+            if (nums[i] < comparison):
+                partitionIdx = i
+                comparison = numsMax
+			# keep track of the largest item we seen so far
+            else:
+                numsMax = max(numsMax, nums[i])
+		# as we are storing an index of the last item that belongs to the partition
+		# and arrays are indexed from 0 we need to increment the value
+        return partitionIdx + 1
+	
