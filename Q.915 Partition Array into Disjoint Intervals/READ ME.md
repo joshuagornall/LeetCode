@@ -1,53 +1,39 @@
-<h2>1936. Add Minimum Number of Rungs</h2><h3>Medium</h3><hr><div><p>You are given a <strong>strictly increasing</strong> integer array <code>rungs</code> that represents the <strong>height</strong> of rungs on a ladder. You are currently on the <strong>floor</strong> at height <code>0</code>, and you want to reach the last rung.</p>
+<h2>Q.915 Partition Array into Disjoint Intervals</h2><h3>Difficulty rating: Medium</h3><hr><div><p> Given an array nums, <strong> partition </strong> it into two (contiguous) subarrays so that: </p>
 
-<p>You are also given an integer <code>dist</code>. You can only climb to the next highest rung if the distance between where you are currently at (the floor or on a rung) and the next rung is <strong>at most</strong> <code>dist</code>. You are able to insert rungs at any positive <strong>integer</strong> height if a rung is not already there.</p>
+<p>
+<code> 1.</code> Every element in left is less than or equal to every element in right.
 
-<p>Return <em>the <strong>minimum</strong> number of rungs that must be added to the ladder in order for you to climb to the last rung.</em></p>
+<code> 2.</code> Left and right are non-empty.
+
+<code> 3.</code> Left has the smallest possible size.
+
+<p>Return the length of left after such a partitioning. It is guaranteed that such a partitioning exists.</p>
 
 <p>&nbsp;</p>
 <p><strong>Example 1:</strong></p>
 
-<pre><strong>Input:</strong> rungs = [1,3,5,10], dist = 2
-<strong>Output:</strong> 2
+<pre><strong>Input:</strong>nums = [5, 0, 3, 8, 6]
+<strong>Output:</strong> 3
 <strong>Explanation:
-</strong>You currently cannot reach the last rung.
-Add rungs at heights 7 and 8 to climb this ladder. 
-The ladder will now have rungs at [1,3,5,<u>7</u>,<u>8</u>,10].
+</strong>left = [5, 0, 3], right = [8, 6]
 </pre>
 
 <p><strong>Example 2:</strong></p>
 
-<pre><strong>Input:</strong> rungs = [3,6,8,10], dist = 3
-<strong>Output:</strong> 0
-<strong>Explanation:</strong>
-This ladder can be climbed without adding additional rungs.
+<pre><strong>Input:</strong>nums = [1, 1, 1, 0, 6, 12]
+<strong>Output:</strong> 4
+<strong>Explanation:
+</strong>left = [1, 1, 1, 0], right = [6, 1, 2]
 </pre>
 
-<p><strong>Example 3:</strong></p>
-
-<pre><strong>Input:</strong> rungs = [3,4,6,7], dist = 2
-<strong>Output:</strong> 1
-<strong>Explanation:</strong>
-You currently cannot reach the first rung from the ground.
-Add a rung at height 1 to climb this ladder.
-The ladder will now have rungs at [<u>1</u>,3,4,6,7].
-</pre>
-
-<p><strong>Example 4:</strong></p>
-
-<pre><strong>Input:</strong> rungs = [5], dist = 10
-<strong>Output:</strong> 0
-<strong>Explanation:</strong>
-This ladder can be climbed without adding additional rungs.
-</pre>
 
 <p>&nbsp;</p>
 <p><strong>Constraints:</strong></p>
 
 <ul>
-	<li><code>1 &lt;= rungs.length &lt;= 10<sup>5</sup></code></li>
-	<li><code>1 &lt;= rungs[i] &lt;= 10<sup>9</sup></code></li>
+	<li><code>1 &lt;= nums.length &lt;= 3x10<sup>4</sup></code></li>
+	<li><code>2 &lt;= nums[i] &lt;= 106</code></li>
 	<li><code>1 &lt;= dist &lt;= 10<sup>9</sup></code></li>
-	<li><code>rungs</code> is <strong>strictly increasing</strong>.</li>
+	<li> It is <strong> guaranteed </strong>there is at <strong> least one </strong> way to partition nums as described. </li>
 </ul>
 </div>
