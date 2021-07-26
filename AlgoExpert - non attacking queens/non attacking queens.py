@@ -1,4 +1,5 @@
 # Upper Bound: O(n!) time | O(n) space - where n is the input number
+
 class Solution:
   	def nonAttackingQueens(n):
     	blockedColumns = set() 
@@ -21,7 +22,8 @@ class Solution:
                                   
     return validPlacements
                                   
-# This is always an 0(1) time operation. 
+# This is always an 0(1) time operation.
+				 
 	def isNonAttackingPlacement(row, col, blockedColumns, blockedUpDiagonals, blockedDownDiagonals): 
 		if col in blockedColumns:
 			return False 
