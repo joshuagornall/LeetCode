@@ -34,3 +34,4 @@ def createPointSet(points):
 
 def convertPointToString(x, y):
 	return str(x) + ":" + str(y)
+
